@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="13" fill="#1c1b18"/>
+  <text x="32" y="27" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="15" letter-spacing="0.3" fill="#ffffff">ETFPA</text>
+  <text x="32" y="40" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="9" letter-spacing="1.5" fill="#f0a35c">26–35</text>
+  <rect x="18" y="47" width="9.33" height="3.6" rx="1" fill="#e8731b"/>
+  <rect x="27.33" y="47" width="9.33" height="3.6" fill="#f4f1ea"/>
+  <rect x="36.66" y="47" width="9.33" height="3.6" rx="1" fill="#15803d"/>
+</svg>
