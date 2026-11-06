@@ -1,0 +1,555 @@
+<title>Politique ETFPA 2026-2035</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+/* Layout : app mobile-first, barre de navigation basse persistante, écran par onglet, cartes empilées */
+:root{
+  --bg:#f3f1ec;
+  --surface:#ffffff;
+  --surface-2:#faf8f4;
+  --ink:#1c1b18;
+  --ink-soft:#56534c;
+  --line:#e2ddd3;
+  --orange:#e8731b;
+  --orange-soft:#f6e3d2;
+  --vert:#15803d;
+  --vert-soft:#dcefe2;
+  --bleu:#3a6ea5;
+  --rouge:#b3261e;
+  --amber:#b7791f;
+  --shadow:0 1px 2px rgba(28,27,24,.06),0 6px 20px rgba(28,27,24,.05);
+  color-scheme:light;
+  --f-display:"Georgia","Times New Roman",serif;
+  --f-body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17181a;--surface:#1f2124;--surface-2:#26282c;--ink:#ece9e3;--ink-soft:#a7a39a;
+  --line:#34373c;--orange:#f08a3c;--orange-soft:#3a2a1a;--vert:#49b36e;--vert-soft:#1b2c21;
+  --bleu:#6fa0d6;--rouge:#e06a62;--amber:#d6a349;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#17181a;--surface:#1f2124;--surface-2:#26282c;--ink:#ece9e3;--ink-soft:#a7a39a;
+  --line:#34373c;--orange:#f08a3c;--orange-soft:#3a2a1a;--vert:#49b36e;--vert-soft:#1b2c21;
+  --bleu:#6fa0d6;--rouge:#e06a62;--amber:#d6a349;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);line-height:1.5;margin:0;
+  -webkit-font-smoothing:antialiased;padding-bottom:84px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--surface)}
+
+/* En-tête collant */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--surface);
+  border-bottom:1px solid var(--line)}
+.head-in{max-width:760px;margin:0 auto;padding-block:10px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;align-items:center;gap:11px}
+.crest{width:34px;height:34px;flex:0 0 auto;border-radius:7px;overflow:hidden;display:grid;place-items:center;
+  background:linear-gradient(180deg,var(--orange) 0 34%,#fff 34% 66%,var(--vert) 66% 100%)}
+.crest span{font-family:var(--f-display);font-weight:700;font-size:15px;color:#1c1b18}
+.head-txt{min-width:0;flex:1}
+.head-txt h1{font-family:var(--f-display);font-size:15px;margin:0;line-height:1.15;font-weight:700;letter-spacing:.1px}
+.head-txt p{margin:1px 0 0;font-size:11px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.theme-btn{flex:0 0 auto;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-soft);
+  width:34px;height:34px;border-radius:8px;cursor:pointer;font-size:15px;display:grid;place-items:center}
+
+/* Zone de contenu */
+main{max-width:760px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:16px}
+.screen[hidden]{display:none!important}
+.screen{animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.screen,.screen *{animation:none!important}}
+
+/* Bandeau d'onglet */
+.tab-hero{border-radius:14px;padding:16px 16px 15px;margin-bottom:16px;color:#fff;position:relative;overflow:hidden;
+  box-shadow:var(--shadow)}
+.tab-hero .eyebrow{font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;opacity:.9;font-weight:600}
+.tab-hero h2{font-family:var(--f-display);font-size:22px;margin:6px 0 5px;line-height:1.1;font-weight:700;color:#fff;text-wrap:balance}
+.tab-hero p{margin:0;font-size:13px;opacity:.95;max-width:60ch}
+.hero-et{background:linear-gradient(135deg,#c75f12,#e8731b)}
+.hero-fp{background:linear-gradient(135deg,#2f6a4b,#15803d)}
+.hero-ap{background:linear-gradient(135deg,#355f8c,#3a6ea5)}
+.hero-tr{background:linear-gradient(135deg,#4a4640,#6a645a)}
+
+/* Cartes */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:15px 15px 14px;margin-bottom:13px;
+  box-shadow:var(--shadow)}
+.card>h3{font-family:var(--f-display);font-size:16px;margin:0 0 4px;font-weight:700;text-wrap:balance}
+.card .sub{font-size:12px;color:var(--ink-soft);margin:0 0 12px}
+.section-label{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink-soft);
+  font-weight:700;margin:22px 2px 9px}
+.section-label:first-child{margin-top:2px}
+
+/* KPI */
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin-bottom:4px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 13px 12px;box-shadow:var(--shadow)}
+.kpi .n{font-family:var(--f-display);font-size:23px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.kpi .n.or{color:var(--orange)}.kpi .n.ve{color:var(--vert)}.kpi .n.bl{color:var(--bleu)}.kpi .n.rg{color:var(--rouge)}
+.kpi .l{font-size:11.5px;color:var(--ink-soft);margin-top:5px;line-height:1.3}
+
+/* Graphiques */
+.chart-wrap{position:relative;width:100%}
+.chart-box{position:relative;height:230px}
+.chart-box.tall{height:300px}
+.chart-cap{font-size:11px;color:var(--ink-soft);margin-top:9px;text-align:center;font-style:italic}
+
+/* Listes produits / actions */
+.prod{border:1px solid var(--line);border-radius:11px;margin-bottom:9px;overflow:hidden;background:var(--surface-2)}
+.prod-head{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;cursor:pointer;user-select:none}
+.prod-head:hover{background:var(--surface)}
+.prod-code{flex:0 0 auto;font-family:var(--f-display);font-weight:700;font-size:12px;color:#fff;
+  padding:3px 7px;border-radius:6px;line-height:1.3}
+.c-et{background:var(--orange)}.c-fp{background:var(--vert)}.c-ap{background:var(--bleu)}.c-tr{background:#6a645a}
+.prod-t{flex:1;min-width:0;font-size:13px;font-weight:600;line-height:1.35}
+.prod-cost{flex:0 0 auto;font-size:11.5px;color:var(--ink-soft);font-variant-numeric:tabular-nums;white-space:nowrap;padding-top:1px}
+.chev{flex:0 0 auto;color:var(--ink-soft);transition:transform .2s;font-size:12px;padding-top:2px}
+.prod.open .chev{transform:rotate(90deg)}
+.prod-body{padding:0 12px 0 12px;max-height:0;overflow:hidden;transition:max-height .28s ease,padding .28s ease}
+.prod.open .prod-body{max-height:1400px;padding:2px 12px 12px}
+.prod-body ul{margin:4px 0 0;padding-left:16px}
+.prod-body li{font-size:12.5px;color:var(--ink-soft);margin-bottom:4px;line-height:1.4}
+
+/* FFOM / colonnes */
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.swot-col{border-radius:11px;padding:12px;border:1px solid var(--line)}
+.swot-col h4{margin:0 0 8px;font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:6px}
+.swot-col ul{margin:0;padding-left:15px}
+.swot-col li{font-size:11.5px;margin-bottom:5px;line-height:1.35;color:var(--ink-soft)}
+.sw-f{background:var(--vert-soft)}.sw-f h4{color:var(--vert)}
+.sw-w{background:var(--orange-soft)}.sw-w h4{color:var(--orange)}
+.sw-o{background:var(--vert-soft)}.sw-o h4{color:var(--vert)}
+.sw-m{background:#f6ded9}.sw-m h4{color:var(--rouge)}
+:root[data-theme="dark"] .sw-m,:root:not([data-theme="light"]) .sw-m{background:#2d1c1a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sw-m{background:#2d1c1a}}
+
+/* Timeline horizons */
+.tl{display:flex;flex-direction:column;gap:0;margin-top:4px}
+.tl-item{display:flex;gap:12px}
+.tl-rail{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;width:16px}
+.tl-dot{width:13px;height:13px;border-radius:50%;border:3px solid var(--surface);margin-top:3px;box-shadow:0 0 0 2px currentColor}
+.tl-line{width:2px;flex:1;background:var(--line);min-height:12px}
+.tl-item:last-child .tl-line{display:none}
+.tl-body{flex:1;padding-bottom:16px;min-width:0}
+.tl-body h5{margin:0 0 2px;font-size:13px;font-weight:700}
+.tl-body .yr{font-size:11px;color:var(--ink-soft);font-weight:600;letter-spacing:.3px}
+.tl-body p{margin:4px 0 0;font-size:12px;color:var(--ink-soft);line-height:1.4}
+
+/* Pastilles / tags */
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:3px}
+.pill{font-size:11px;padding:4px 9px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);
+  color:var(--ink-soft);font-weight:500}
+
+/* note / angle mort */
+.note{border-left:3px solid var(--amber);background:var(--surface-2);border-radius:0 9px 9px 0;
+  padding:11px 13px;margin:13px 0 0;font-size:12.5px;color:var(--ink-soft);line-height:1.45}
+.note b{color:var(--ink);font-weight:600}
+
+/* acteurs gov */
+.gov{display:flex;flex-direction:column;gap:9px}
+.gov-row{display:flex;gap:11px;align-items:flex-start;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:11px;padding:11px 12px}
+.gov-ic{flex:0 0 auto;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-size:14px;
+  background:var(--orange-soft);color:var(--orange);font-weight:700;font-family:var(--f-display)}
+.gov-row h5{margin:0 0 3px;font-size:13px;font-weight:700}
+.gov-row p{margin:0;font-size:11.5px;color:var(--ink-soft);line-height:1.4}
+
+/* nav basse */
+nav{position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--surface);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.nav-in{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+.nav-btn{border:none;background:none;cursor:pointer;padding:9px 2px 8px;display:flex;flex-direction:column;
+  align-items:center;gap:3px;color:var(--ink-soft);font-family:inherit}
+.nav-btn .ic{width:21px;height:21px;display:block}
+.nav-btn .lb{font-size:9.5px;font-weight:600;letter-spacing:.1px;text-align:center;line-height:1.1}
+.nav-btn.active{color:var(--orange)}
+.nav-btn.active[data-i="fp"]{color:var(--vert)}
+.nav-btn.active[data-i="ap"]{color:var(--bleu)}
+.nav-btn.active[data-i="tr"]{color:#8a8375}
+.nav-btn.active .ic{transform:translateY(-1px)}
+
+footer{text-align:center;padding:18px 0 6px;font-size:11px;color:var(--ink-soft)}
+footer b{color:var(--ink);font-family:var(--f-display);letter-spacing:.3px}
+footer .v{display:block;margin-top:3px;opacity:.7;font-size:10px}
+
+.intro-p{font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin:0 0 4px}
+.lead{font-size:14px;line-height:1.55;margin:0 0 10px}
+@media (max-width:420px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .tab-hero h2{font-size:20px}
+  .prod-cost{display:none}
+}
+</style>
+
+<header>
+  <div class="head-in">
+    <div class="crest"><span>CI</span></div>
+    <div class="head-txt">
+      <h1>Politique ETFPA 2026&ndash;2035</h1>
+      <p id="head-sub">République de Côte d'Ivoire &middot; METFPA</p>
+    </div>
+    <button class="theme-btn" id="themeBtn" aria-label="Changer le thème">◐</button>
+  </div>
+</header>
+
+<main>
+  <!-- ========================== ACCUEIL ========================== -->
+  <section class="screen" id="s-home">
+    <div class="tab-hero hero-et" style="background:linear-gradient(135deg,#1c1b18,#3a3630)">
+      <div class="eyebrow">Document de politique &middot; Version finale</div>
+      <h2>Repenser et revaloriser l'enseignement technique</h2>
+      <p>Une feuille de route décennale pour faire de l'ETFPA un levier de la transformation structurelle de l'économie ivoirienne.</p>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="n or">2&nbsp;937,7</div><div class="l">Milliards FCFA à mobiliser sur 2026&ndash;2035</div></div>
+      <div class="kpi"><div class="n ve">3</div><div class="l">Axes stratégiques &middot; 3 effets attendus</div></div>
+      <div class="kpi"><div class="n bl">27</div><div class="l">Produits &middot; une centaine d'actions-clés</div></div>
+      <div class="kpi"><div class="n rg">6</div><div class="l">Défis sectoriels à relever</div></div>
+    </div>
+
+    <p class="section-label">La vision 2035</p>
+    <div class="card">
+      <p class="lead" style="font-family:var(--f-display);font-style:italic">« Repenser et revaloriser l'enseignement technique, la formation professionnelle et l'apprentissage pour soutenir le développement socio-économique et contribuer à l'émergence rapide de la Côte d'Ivoire. »</p>
+      <div class="pills">
+        <span class="pill">Agenda 2030 &middot; ODD 4</span>
+        <span class="pill">ENP Côte d'Ivoire 2040 &middot; Pilier 1</span>
+        <span class="pill">PND 2026&ndash;2030</span>
+      </div>
+    </div>
+
+    <p class="section-label">Les 3 axes &middot; répartition du budget</p>
+    <div class="card">
+      <div class="chart-box"><canvas id="cAxes"></canvas></div>
+      <p class="chart-cap">Coût de mise en œuvre par effet, en milliards FCFA (total 2&nbsp;937,7 Mds)</p>
+    </div>
+
+    <p class="section-label">Ce que vise la politique</p>
+    <div class="card">
+      <div class="tl">
+        <div class="tl-item"><div class="tl-rail"><div class="tl-dot" style="color:var(--orange)"></div><div class="tl-line"></div></div>
+          <div class="tl-body"><div class="yr">COURT TERME &middot; 1 an</div><h5>Parachever le cadre juridique et le pilotage</h5><p>Textes d'application de la loi d'orientation, opérationnalisation du dispositif CICSEF-Task Force, maîtrise de la chaîne PPPBSE et des données.</p></div></div>
+        <div class="tl-item"><div class="tl-rail"><div class="tl-dot" style="color:var(--vert)"></div><div class="tl-line"></div></div>
+          <div class="tl-body"><div class="yr">MOYEN TERME &middot; 3 à 5 ans</div><h5>Étendre l'accès, rénover l'offre</h5><p>Construction et réhabilitation d'infrastructures, filières des secteurs porteurs, APC et formation par alternance à l'échelle, digitalisation.</p></div></div>
+        <div class="tl-item"><div class="tl-rail"><div class="tl-dot" style="color:var(--bleu)"></div><div class="tl-line"></div></div>
+          <div class="tl-body"><div class="yr">LONG TERME &middot; horizon 2035</div><h5>Une insertion professionnelle durable</h5><p>Des diplômés dont les compétences répondent aux besoins des secteurs productifs et contribuent à l'industrialisation inclusive du pays.</p></div></div>
+      </div>
+    </div>
+
+    <p class="section-label">Diagnostic &middot; forces, faiblesses, opportunités, menaces</p>
+    <div class="swot">
+      <div class="swot-col sw-f"><h4>▲ Forces</h4><ul>
+        <li>Dispositif de financement opérationnel (FDFP, PPP, TAC)</li>
+        <li>Ancrage institutionnel rétabli depuis 2021</li>
+        <li>Certifications CQM et CQP en place</li>
+        <li>Taux de réussite &gt; 50 % (CAP, BP, BT, Bac techniques)</li>
+      </ul></div>
+      <div class="swot-col sw-w"><h4>▼ Faiblesses</h4><ul>
+        <li>Offre à 90 % privée, peu maîtrisée par le METFPA</li>
+        <li>Inadéquation formation / emploi</li>
+        <li>Vétusté des infrastructures, plateaux obsolètes</li>
+        <li>Faible attractivité, faible digitalisation</li>
+      </ul></div>
+      <div class="swot-col sw-o"><h4>◆ Opportunités</h4><ul>
+        <li>Transformation structurelle de l'économie</li>
+        <li>Forte demande liée aux NEET</li>
+        <li>Métiers des nouvelles technologies et transition juste</li>
+        <li>Engagement fort des partenaires au développement</li>
+      </ul></div>
+      <div class="swot-col sw-m"><h4>✕ Menaces</h4><ul>
+        <li>Financement éducation &lt; seuil de 20 % du budget</li>
+        <li>Instabilité sociopolitique possible</li>
+        <li>Pression terroriste au Sahel sur le Nord</li>
+        <li>Mauvaise insertion pesant sur l'image du secteur</li>
+      </ul></div>
+    </div>
+
+    <div class="note"><b>À garder à l'esprit.</b> Le document de politique raisonne par axes transversaux (gouvernance, accès, qualité), non par sous-secteur. La ventilation en quatre onglets ci-dessous est une lecture de restitution : chaque produit reste rattaché à son effet d'origine, avec son coût officiel.</div>
+  </section>
+
+  <!-- ========================== ENSEIGNEMENT TECHNIQUE ========================== -->
+  <section class="screen" id="s-et" hidden></section>
+
+  <!-- ========================== FORMATION PROFESSIONNELLE ========================== -->
+  <section class="screen" id="s-fp" hidden></section>
+
+  <!-- ========================== APPRENTISSAGE ========================== -->
+  <section class="screen" id="s-ap" hidden></section>
+
+  <!-- ========================== TRANSVERSALES ========================== -->
+  <section class="screen" id="s-tr" hidden></section>
+
+  <footer>
+    Développé par <b>STRATEGEO</b>
+    <span class="v">Application de restitution &middot; Politique ETFPA 2026&ndash;2035 &middot; METFPA</span>
+  </footer>
+</main>
+
+<nav>
+  <div class="nav-in">
+    <button class="nav-btn active" data-i="home" data-s="s-home">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+      <span class="lb">Accueil</span></button>
+    <button class="nav-btn" data-i="et" data-s="s-et">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v12H3z"/><path d="M8 7V5h8v2"/><path d="M12 11v4M9.5 13h5"/></svg>
+      <span class="lb">Ens. technique</span></button>
+    <button class="nav-btn" data-i="fp" data-s="s-fp">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 7v6c0 4 3.5 6.5 8 8 4.5-1.5 8-4 8-8V7z"/><path d="m9 12 2 2 4-4"/></svg>
+      <span class="lb">Form. prof.</span></button>
+    <button class="nav-btn" data-i="ap" data-s="s-ap">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5z"/><path d="M6 10.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-5.5"/></svg>
+      <span class="lb">Apprentissage</span></button>
+    <button class="nav-btn" data-i="tr" data-s="s-tr">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+      <span class="lb">Transversal</span></button>
+  </div>
+</nav>
+
+<script>
+// ---------- DONNÉES (fidèles au document de politique) ----------
+var COLORS={et:'#e8731b',fp:'#15803d',ap:'#3a6ea5',tr:'#6a645a'};
+
+// Produits de l'Effet 1 (gouvernance) — répartis selon l'onglet le plus pertinent
+var DATA={
+  et:{
+    eyebrow:"Axe 3 — Qualité · Onglet 1/4",
+    title:"Enseignement technique",
+    intro:"La formation initiale sous statut scolaire : filières, curricula, plateaux techniques et formation des formateurs. Le cœur qualitatif de l'offre, rattaché à l'Effet 3 de la politique.",
+    budget:206569,
+    budgetLabel:"Effet 3 — Offre pertinente, qualitative et attractive",
+    kpis:[
+      {n:"206,6",c:"or",l:"Mds FCFA — amélioration de la qualité de l'offre"},
+      {n:"9",c:"or",l:"Produits dédiés à la qualité et aux curricula"},
+      {n:"143",c:"or",l:"Mds FCFA pour la mise à niveau des plateaux techniques"},
+      {n:"4",c:"or",l:"Pays de référence ciblés pour les partenariats"}
+    ],
+    chart:{type:'bar',title:"Coût des produits de l'Effet 3 (Mds FCFA)",
+      labels:["Plateaux techn.","Méth. pédago.","Curricula","Form. formateurs","Alternance","Partenariats int.","Assur. qualité","Adéquation"],
+      values:[143.0,18.74,18.56,15.71,5.36,3.75,0.75,0.70]},
+    products:[
+      {code:"P3.7",t:"Plateaux techniques mis à niveau selon les évolutions technologiques",cost:"143 000 M",items:["Achever les mises à niveau en cours","Élaborer des modèles types par filière et niveau","Mettre à niveau l'existant et équiper les nouveaux établissements"]},
+      {code:"P3.1",t:"Méthodes pédagogiques : compétences techniques ET comportementales",cost:"18 740 M",items:["Déployer l'Approche par Compétences (APC) au niveau national","Renforcer la pratique, intégrer les soft skills","Guides et ressources pédagogiques uniformisés"]},
+      {code:"P3.2",t:"Curricula rénovés : numérique, IA, maintenance prédictive, entrepreneuriat",cost:"18 559 M",items:["Rénover les curricula existants avec le secteur productif","Élaborer les curricula des nouveaux métiers"]},
+      {code:"P3.6",t:"Dispositif de formation des formateurs modernisé et effectif",cost:"15 711 M",items:["Nouveau modèle de formation initiale des formateurs","Formation continue, recherche et innovation","Antennes d'encadrement pédagogique au plan national","Certification des enseignants du privé"]},
+      {code:"P3.8",t:"Formation par alternance mise à l'échelle",cost:"5 360 M",items:["Stratégie de mise à l'échelle (cadre réglementaire, financement)","Mise en œuvre de la stratégie"]},
+      {code:"P3.5",t:"Partenariats internationaux : accréditations et certifications",cost:"3 750 M",items:["Partenariats avec l'Allemagne, la Suisse, la Corée du Sud, le Canada…","Établissements et entités d'accréditation reconnus"]},
+      {code:"P3.3",t:"Système d'assurance qualité de l'ETFP",cost:"750 M",items:["Mettre en place une structure d'assurance qualité","Couvrir le public comme le privé"]},
+      {code:"P3.4",t:"Adéquation besoins des secteurs productifs / offre de formation",cost:"700 M",items:["Opérationnaliser le partenariat État–secteur privé","Participation du privé à la gouvernance des établissements publics"]},
+      {code:"P3.9",t:"Développement des activités extra-scolaires",cost:"À évaluer",items:["Prise en charge psychologique des apprenants","Activités sportives, culturelles, environnementales, détection de talents"]}
+    ],
+    blind:"Angle mort. Le produit « plateaux techniques » pèse à lui seul 143 Mds, soit 69 % de l'Effet 3. La maintenance (Produit 1.8) est budgétée à part, dans la gouvernance : sans elle, l'investissement matériel se dégrade en quelques années. Les deux doivent avancer ensemble."
+  },
+  fp:{
+    eyebrow:"Axe 2 — Accès · Onglet 2/4",
+    title:"Formation professionnelle",
+    intro:"L'extension et la diversification de l'offre : construire, réhabiliter, créer des filières dans les secteurs porteurs, maîtriser l'offre privée. Le plus gros poste budgétaire de toute la politique.",
+    budget:1957470,
+    budgetLabel:"Volet accès & offre — produits 2.1 à 2.5",
+    kpis:[
+      {n:"2 634",c:"ve",l:"Mds FCFA — Effet 2 (accès), 90 % du budget total"},
+      {n:"1 024",c:"ve",l:"Mds FCFA — construction de nouvelles infrastructures"},
+      {n:"90 %",c:"ve",l:"Part actuelle du privé dans l'offre d'ETFP"},
+      {n:"4",c:"ve",l:"Secteurs porteurs visés pour les nouvelles filières"}
+    ],
+    chart:{type:'bar',title:"Produits d'accès & d'offre (Mds FCFA)",
+      labels:["Construction","Réhabilitation","Cond. entrée/parcours","Appui offre privée","Offre étendue"],
+      values:[1024.22,412.18,430.02,85.05,6.0]},
+    products:[
+      {code:"P2.1",t:"Programme de construction de nouvelles infrastructures publiques",cost:"1 024 220 M",items:["Achever les constructions en cours","Élaborer puis mettre en œuvre le programme national"]},
+      {code:"P2.3",t:"Conditions d'entrée et de parcours améliorées",cost:"430 022 M",items:["Information et orientation des apprenants","Accompagnement tout au long du cursus","Internats inclusifs (filles, handicap)","Bourses et aides favorisant l'accès des filles à l'industriel"]},
+      {code:"P2.2",t:"Réhabilitation et extension des infrastructures existantes",cost:"412 178 M",items:["Achever les réhabilitations en cours","Programme national de réhabilitation / extension"]},
+      {code:"P2.5",t:"Appui au développement et à la maîtrise de l'offre privée",cost:"85 050 M",items:["Aligner le cadre légal avec les nouvelles orientations","Fonds de garantie pour les initiatives privées","Centres de mutualisation de ressources techniques par district"]},
+      {code:"P2.4",t:"Offre d'ETFP étendue et diversifiée",cost:"6 000 M",items:["Nouvelles filières post-baccalauréat","Agro-industrie, énergies renouvelables, TIC, développement durable","Développer l'offre de formation en ligne"]}
+    ],
+    blind:"Angle mort. L'offre est aujourd'hui à 90 % privée et mal maîtrisée par le ministère ; or seuls 85 Mds (3 % de l'Effet 2) vont à l'appui et à la régulation du privé, contre 1 436 Mds de construction publique. La capacité à réguler le privé déterminera le rendement de l'investissement public."
+  },
+  ap:{
+    eyebrow:"Axe 2 — Accès · Onglet 3/4",
+    title:"Apprentissage & inclusion",
+    intro:"L'apprentissage, la formation qualifiante et l'offre adaptée aux jeunes déscolarisés, non scolarisés et aux personnes vulnérables. La réponse au stock de NEET et le 6ᵉ défi de la politique.",
+    budget:676796,
+    budgetLabel:"Produits 2.6 à 2.8 — apprentissage & publics vulnérables",
+    kpis:[
+      {n:"676,8",c:"bl",l:"Mds FCFA — apprentissage, professionnalisation, inclusion"},
+      {n:"517,6",c:"bl",l:"Mds FCFA — dispositif d'apprentissage à l'échelle nationale"},
+      {n:"CQM",c:"bl",l:"+ CQP & VAE — professionnalisation des métiers"},
+      {n:"E2C",c:"bl",l:"École de la 2ᵉ Chance déployée sur le territoire"}
+    ],
+    chart:{type:'doughnut',title:"Répartition du volet apprentissage (Mds FCFA)",
+      labels:["Apprentissage & form. qualifiante","Offre groupes vulnérables","Professionnalisation (CQM/CQP/VAE)"],
+      values:[517.57,89.60,69.63]},
+    products:[
+      {code:"P2.6",t:"Apprentissage et formation qualifiante opérationnels à l'échelle nationale",cost:"517 568 M",items:["Achever les infrastructures d'apprentissage en cours","Programme de développement des infrastructures","Déploiement de l'École de la 2ᵉ Chance (E2C)","Ingénierie de la formation par apprentissage avec le secteur productif","Partenariats avec les opérateurs privés de formation"]},
+      {code:"P2.8",t:"Offre adaptée aux groupes vulnérables et spécifiques",cost:"89 600 M",items:["Formations pour publics vulnérables (carcéraux, enfants de la rue, en conflit avec la loi, handicap, femmes précaires)","Formations adaptées aux populations des zones à risque"]},
+      {code:"P2.7",t:"Dispositif d'appui à la professionnalisation des métiers",cost:"69 628 M",items:["Encadrement de l'apprentissage traditionnel et informel (CQM)","Validation des Acquis de l'Expérience (VAE)"]}
+    ],
+    blind:"Angle mort. Le document identifie un « important stock » de NEET et de publics vulnérables mais ne chiffre pas la population cible. Sans ciblage quantifié, le dimensionnement de l'E2C et des formations qualifiantes reste indicatif — un point à sécuriser dès les documents-programmes ACT et E2C."
+  },
+  tr:{
+    eyebrow:"Axe 1 — Gouvernance · Onglet 4/4",
+    title:"Mesures transversales",
+    intro:"La gouvernance, le pilotage, le financement, la digitalisation, les RH, le genre et la décentralisation. Le socle qui conditionne la réussite de tout le reste — l'Effet 1 de la politique.",
+    budget:96891,
+    budgetLabel:"Effet 1 — Gouvernance proactive & pilotage",
+    kpis:[
+      {n:"96,9",c:"rg",l:"Mds FCFA — réforme de la gouvernance et du pilotage"},
+      {n:"10",c:"rg",l:"Produits transversaux (juridique, RH, digital, genre…)"},
+      {n:"40,4",c:"rg",l:"Mds FCFA — capacités opérationnelles et de pilotage"},
+      {n:"5",c:"rg",l:"Principes directeurs de mise en œuvre"}
+    ],
+    chart:{type:'bar',title:"Produits de gouvernance (Mds FCFA)",
+      labels:["Capacités pilotage","Maintenance","RH","Digitalisation","Juridique","Communication","Finance innov.","Genre/inclusion","Cadre instit."],
+      values:[40.36,16.78,17.01,13.36,3.04,2.47,1.98,1.27,0.63]},
+    products:[
+      {code:"P1.3",t:"Capacités opérationnelles et de pilotage renforcées",cost:"40 362 M",items:["Opérationnaliser la chaîne PPPBSE","Gestion des flux d'apprenants, suivi de l'insertion","Management de la qualité, HSSE, passerelles"]},
+      {code:"P1.5",t:"Gestion efficace et efficiente des ressources humaines",cost:"17 013 M",items:["Gestion prévisionnelle des emplois et compétences","Alignement qualitatif et quantitatif des RH","Système Intégré de Gestion des RH"]},
+      {code:"P1.8",t:"Exploitation et maintenance des équipements et infrastructures",cost:"16 780 M",items:["Cellules d'entretien et de maintenance dans les établissements","Programme de maintenance corrective et préventive"]},
+      {code:"P1.4",t:"Digitalisation de l'ETFP réalisée",cost:"13 355 M",items:["Stratégie et infrastructures numériques","TICE adaptées à l'ETFP","Compétences numériques, gouvernance numérique"]},
+      {code:"P1.1",t:"Réformes du cadre juridique finalisées et vulgarisées",cost:"3 035 M",items:["Textes d'application de la loi d'orientation","Loi spécifique à l'apprentissage","Taxe d'Apprentissage Contributive (TAC)","Titres fonciers définitifs des sites ETFP"]},
+      {code:"P1.7",t:"Communication interne et externe renforcée",cost:"2 470 M",items:["Réviser puis mettre en œuvre la stratégie de communication"]},
+      {code:"P1.6",t:"Mécanismes innovants de financement",cost:"1 982 M",items:["Renforcer les capacités en mobilisation de ressources","Cellule de mobilisation de fonds d'investissement","Incitations aux entreprises, modèles innovants des PTF"]},
+      {code:"P1.9",t:"Santé sexuelle et reproductive, genre et inclusion sociale",cost:"1 270 M",items:["Élaborer la politique genre et inclusion de l'ETFP","Opérationnaliser les programmes dans les établissements"]},
+      {code:"P1.2",t:"Cadre institutionnel renforcé",cost:"625 M",items:["Réforme des structures sous tutelle (FDFP, AGEFOP, IPNETP, CIDFOR…)","Nouveau cadre de gouvernance des établissements","Instances d'implication du privé (CPP, CNBP, C-PDC)"]},
+      {code:"P1.10",t:"Décentralisation du service public d'ETFP effective",cost:"À évaluer",items:["Renforcer les directions régionales (planification, S&E, appui-conseil)","Territorialiser la politique d'ETFP"]}
+    ],
+    blind:"Angle mort. La gouvernance ne pèse que 3,3 % du budget mais conditionne les 96,7 % restants. Deux produits structurants — décentralisation (P1.10) et activités extra-scolaires — sont « à évaluer » : le total de 2 937,7 Mds est donc un plancher, pas un plafond."
+  }
+};
+
+// Pilotage / gouvernance commun
+var GOV=[
+  {ic:"CoP",h:"Comité de Pilotage",p:"Présidé par le Directeur de Cabinet. Approuve plans et rapports annuels, appuie la mobilisation des ressources, arbitre. Se réunit chaque semestre."},
+  {ic:"CT",h:"Comité Technique",p:"Présidé par le Directeur de Cabinet Adjoint. Coordination technique et financière, suivi des indicateurs, rapport semestriel."},
+  {ic:"DPSI",h:"Direction de la Planification, des Statistiques et de l'Informatique",p:"Assure le S&E : tableau de bord de pilotage, renseignement des indicateurs, rapports de mise en œuvre."}
+];
+
+// ---------- RENDU ----------
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function buildScreen(key){
+  var d=DATA[key], c=COLORS[key], heroCls={et:'hero-et',fp:'hero-fp',ap:'hero-ap',tr:'hero-tr'}[key];
+  var ccls={et:'c-et',fp:'c-fp',ap:'c-ap',tr:'c-tr'}[key];
+  var h='';
+  h+='<div class="tab-hero '+heroCls+'"><div class="eyebrow">'+d.eyebrow+'</div><h2>'+d.title+'</h2><p>'+d.intro+'</p></div>';
+  // KPI
+  h+='<div class="kpis">';
+  d.kpis.forEach(function(k){h+='<div class="kpi"><div class="n '+k.c+'">'+k.n+'</div><div class="l">'+k.l+'</div></div>';});
+  h+='</div>';
+  // chart
+  h+='<p class="section-label">'+d.budgetLabel+'</p>';
+  h+='<div class="card"><div class="chart-box'+(d.chart.type==='bar'&&d.chart.labels.length>6?' tall':'')+'"><canvas id="chart-'+key+'"></canvas></div><p class="chart-cap">'+d.chart.title+'</p></div>';
+  // produits
+  h+='<p class="section-label">Produits &amp; actions-clés</p>';
+  d.products.forEach(function(p,i){
+    h+='<div class="prod" data-k="'+key+'" data-i="'+i+'"><div class="prod-head"><span class="prod-code '+ccls+'">'+p.code+'</span><span class="prod-t">'+p.t+'</span><span class="prod-cost">'+p.cost+'</span><span class="chev">▶</span></div>';
+    h+='<div class="prod-body"><ul>';
+    p.items.forEach(function(it){h+='<li>'+it+'</li>';});
+    h+='</ul></div></div>';
+  });
+  // gouvernance commune sur l'onglet transversal
+  if(key==='tr'){
+    h+='<p class="section-label">Cadre de pilotage &amp; suivi-évaluation</p><div class="card"><div class="gov">';
+    GOV.forEach(function(g){h+='<div class="gov-row"><div class="gov-ic">'+g.ic+'</div><div><h5>'+g.h+'</h5><p>'+g.p+'</p></div></div>';});
+    h+='</div></div>';
+    h+='<p class="section-label">Principes directeurs</p><div class="card"><div class="pills">'
+      +'<span class="pill">L\'apprenant au cœur · genre</span><span class="pill">Approche partenariale</span>'
+      +'<span class="pill">Financement soutenable</span><span class="pill">Orientation résultats (GAR)</span>'
+      +'<span class="pill">Inclusivité</span></div></div>';
+  }
+  // angle mort
+  h+='<div class="note"><b>'+d.blind.split('.')[0]+'.</b>'+d.blind.substring(d.blind.indexOf('.')+1)+'</div>';
+  document.getElementById('s-'+key).innerHTML=h;
+}
+['et','fp','ap','tr'].forEach(buildScreen);
+
+// accordéon
+document.addEventListener('click',function(e){
+  var head=e.target.closest('.prod-head');
+  if(head){head.parentElement.classList.toggle('open');}
+});
+
+// ---------- NAVIGATION ----------
+var charts={};
+function show(sid,btn){
+  document.querySelectorAll('.screen').forEach(function(s){s.hidden=(s.id!==sid);});
+  document.querySelectorAll('.nav-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'instant'});
+  var key=sid.replace('s-','');
+  if(['et','fp','ap','tr'].indexOf(key)>-1 && !charts[key]) drawTabChart(key);
+  if(sid==='s-home' && !charts.home) drawHome();
+  var subs={ 'home':"République de Côte d'Ivoire · METFPA", 'et':"Axe qualité · Effet 3",
+    'fp':"Axe accès · Effet 2", 'ap':"Accès · apprentissage & inclusion", 'tr':"Axe gouvernance · Effet 1"};
+  document.getElementById('head-sub').textContent=subs[key]||subs.home;
+  try{location.hash=key;}catch(e){}
+}
+document.querySelectorAll('.nav-btn').forEach(function(b){
+  b.addEventListener('click',function(){show(b.dataset.s,b);});
+});
+
+// ---------- CHART.JS ----------
+function themeInk(){return getComputedStyle(document.documentElement).getPropertyValue('--ink-soft').trim()||'#56534c';}
+function themeLine(){return getComputedStyle(document.documentElement).getPropertyValue('--line').trim()||'#e2ddd3';}
+
+function fmtMds(v){return v>=1000?(v/1000).toFixed(2).replace('.',',')+' k':v.toLocaleString('fr-FR');}
+
+function drawHome(){
+  var ctx=document.getElementById('cAxes');if(!ctx)return;
+  charts.home=new Chart(ctx,{type:'bar',data:{
+    labels:['Effet 1\nGouvernance','Effet 2\nAccès','Effet 3\nQualité'],
+    datasets:[{data:[96.891,2634.266,206.569],
+      backgroundColor:['#b3261e','#15803d','#e8731b'],borderRadius:6,barThickness:46}]},
+    options:baseOpts('Mds FCFA',true)});
+}
+function drawTabChart(key){
+  var ctx=document.getElementById('chart-'+key);if(!ctx)return;
+  var d=DATA[key].chart, c=COLORS[key];
+  if(d.type==='doughnut'){
+    charts[key]=new Chart(ctx,{type:'doughnut',data:{labels:d.labels,
+      datasets:[{data:d.values,backgroundColor:['#3a6ea5','#7aa3cc','#c4d6e8'],borderColor:getComputedStyle(document.documentElement).getPropertyValue('--surface').trim(),borderWidth:2}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:themeInk(),font:{size:11},padding:10,boxWidth:12}},
+        tooltip:{callbacks:{label:function(x){return ' '+x.label+' : '+x.parsed.toLocaleString('fr-FR')+' Mds';}}}}}});
+    return;
+  }
+  var shades=key==='et'?['#e8731b']:key==='fp'?['#15803d']:['#6a645a'];
+  charts[key]=new Chart(ctx,{type:'bar',data:{labels:d.labels,
+    datasets:[{data:d.values,backgroundColor:c,borderRadius:5,barThickness:d.labels.length>6?16:26}]},
+    options:baseOpts('Mds FCFA',d.labels.length<=6,d.labels.length>6)});
+}
+function baseOpts(axLabel,vertical,horizontal){
+  var ink=themeInk(),line=themeLine();
+  var indexAxis=horizontal?'y':'x';
+  return {responsive:true,maintainAspectRatio:false,indexAxis:indexAxis,
+    plugins:{legend:{display:false},
+      tooltip:{callbacks:{label:function(x){var v=horizontal?x.parsed.x:x.parsed.y;return ' '+v.toLocaleString('fr-FR')+' Mds FCFA';}}}},
+    scales:{
+      x:{ticks:{color:ink,font:{size:horizontal?10:9.5},maxRotation:0,autoSkip:false,callback:function(v){var l=this.getLabelForValue(v);return l.split('\n');}},grid:{color:line,display:horizontal},border:{color:line}},
+      y:{ticks:{color:ink,font:{size:horizontal?9.5:10}},grid:{color:line,display:!horizontal},border:{color:line}}
+    }};
+}
+
+// thème
+var tb=document.getElementById('themeBtn');
+tb.addEventListener('click',function(){
+  var cur=document.documentElement.getAttribute('data-theme');
+  var mq=window.matchMedia('(prefers-color-scheme:dark)').matches;
+  var next=(cur==='dark'||(!cur&&mq))?'light':'dark';
+  document.documentElement.setAttribute('data-theme',next);
+  try{localStorage.setItem('etfpa-theme',next);}catch(e){}
+  // redessiner les graphiques existants avec les bonnes couleurs de thème
+  Object.keys(charts).forEach(function(k){if(charts[k]){charts[k].destroy();charts[k]=null;}});
+  var active=document.querySelector('.nav-btn.active');
+  var sid=active?active.dataset.s:'s-home';
+  if(sid==='s-home')drawHome();else drawTabChart(sid.replace('s-',''));
+});
+try{var saved=localStorage.getItem('etfpa-theme');if(saved)document.documentElement.setAttribute('data-theme',saved);}catch(e){}
+
+// démarrage : onglet via hash
+(function(){
+  var h=(location.hash||'').replace('#','');
+  var map={et:'s-et',fp:'s-fp',ap:'s-ap',tr:'s-tr',home:'s-home'};
+  if(map[h]){var btn=document.querySelector('.nav-btn[data-s="'+map[h]+'"]');if(btn){show(map[h],btn);return;}}
+  drawHome();
+})();
+</script>
